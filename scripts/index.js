@@ -4,13 +4,13 @@ let editButton =  document.querySelector('.profile__edit-button');
 let closePopup = document.querySelector('.popup__close-button')
 
 function addPopup () {
-  popup.classList.add('popup__opend');
+  popup.classList.add('popup__opened');
 }
 
 editButton.addEventListener('click', addPopup);
 
 function removePopup() {
-  popup.classList.remove('popup__opend');
+  popup.classList.remove('popup__opened');
 }
 
 closePopup.addEventListener('click', removePopup);
@@ -26,7 +26,7 @@ let inputProfession = document.querySelector('#popup__input_profession');
 
 inputProfession.value = profileProfession.textContent;
 
-let saveButton = document.querySelector('.popup__form');
+let saveButton = document.querySelector('#popup__form');
 
 function formSubmitHandler(evt) {
   evt.preventDefault();

@@ -1,0 +1,19 @@
+.profile__info {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 18px;
+}
+
+
+@media screen and (max-width: 850px) {
+  .profile__info {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+   "avatar avatar"
+   "name edit-button"
+   "profession .";
+   column-gap: 10px;
+  }
+}
