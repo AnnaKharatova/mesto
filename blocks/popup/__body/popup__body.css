@@ -1,5 +1,4 @@
 .popup__body {
-  height: 330px;
   width: 430px;
   position: relative;
   background-color: #FFFFFF;
@@ -10,7 +9,6 @@
 
 @media screen and (max-width: 650px) {
   .popup__body {
-    height: 322px;
     width: 282px;
     margin: 0 auto;
   }

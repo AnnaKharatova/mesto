@@ -1,5 +1,6 @@
 .profile__info {
   display: grid;
+  max-width: 600px;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
   column-gap: 18px;
@@ -13,7 +14,7 @@
     grid-template-areas:
    "avatar avatar"
    "name edit-button"
-   "profession .";
+   "profession profession";
    column-gap: 10px;
   }
 }
