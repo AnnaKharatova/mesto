@@ -83,9 +83,9 @@ function createCard(cardItem){
 
   cardElement.querySelector('.element__image').addEventListener('click', function (evt) {
     popupPicture.classList.add('popup_opened');
-    document.querySelector('.popup-picture__image').src = cardItem.link;
-    document.querySelector('.popup-picture__image').alt = cardItem.name;
-    document.querySelector('.popup-picture__title').textContent = cardItem.name;
+    document.querySelector('.popup__image_picture').src = cardItem.link;
+    document.querySelector('.popup__image_picture').alt = cardItem.name;
+    document.querySelector('.popup__title_picture').textContent = cardItem.name;
   })
 
   return cardElement;
