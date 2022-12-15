@@ -27,24 +27,24 @@ function openPopup(item) {
 };
 
 function openProfilePopup() {
-  openPopup(popupProfile);
   inputName.value = profileName.textContent;
   inputProfession.value = profileProfession.textContent;
+  openPopup(popupProfile);
 };
 profileButton.addEventListener('click', openProfilePopup);
 
-function removePopup(item) {
+function closePopup(item) {
   item.classList.remove('popup_opened');
 };
 popupPofileClose.addEventListener('click', function(){
-  removePopup(popupProfile)
+  closePopup(popupProfile)
 });
 
 function handleFormSubmit (evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileProfession.textContent = inputProfession.value;
-  removePopup(popupProfile);
+  closePopup(popupProfile);
 };
 
 formElement.addEventListener('submit', handleFormSubmit);
@@ -72,17 +72,17 @@ function createCard(cardItem){
     PopupImage.src = cardItem.link;
     PopupImage.alt = cardItem.name;
     popupPictureTitle.textContent = cardItem.name;
-  })
+  });
   return cardElement;
 };
 
 function renderCard(cardItem) {
   elementsContainer.prepend(createCard(cardItem));
-}
+};
 
 cards.forEach((item) => {
   renderCard(item);
-})
+});
 
 // Добавление карточки:
 
@@ -91,22 +91,22 @@ openPopup(popupCard);
 });
 
 popupCloseCard.addEventListener('click', function() {
-removePopup(popupCard);
+closePopup(popupCard);
 });
 
 function addCard(evt){
   evt.preventDefault();
   renderCard({name: cardInputName.value, link: cardInputLink.value});
-  removePopup(popupCard);
+  closePopup(popupCard);
   cardInputName.value = '';
   cardInputLink.value = '';
-}
+};
 cardForm.addEventListener('submit', addCard);
 
 // Попап с картинкой:
 
 popupImageCloseButton.addEventListener('click', function() {
-  removePopup(popupPicture);
+  closePopup(popupPicture);
 });
 
 
