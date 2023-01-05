@@ -18,7 +18,7 @@ const cardInputLink = document.querySelector('#popup-card__url');
 const popups = Array.from(document.querySelectorAll('.popup'));
 const formElement = validationConfig.formSelector;
 const formInput = validationConfig.inputSelector;
-const formError = document.querySelector(`.${formInput.id}-error`);
+const formError = document.querySelector(`.${formInput.id}_error`);
 const buttonElement = validationConfig.submitButtonSelector;
 
 //закрытие попапа кликом на темном фоне
