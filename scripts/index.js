@@ -1,9 +1,9 @@
 const popupProfile = document.querySelector('#popup-profile');
 const profileButton =  document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('#profile__name');
-const inputName = document.querySelector('#popup__profile_name');
+const inputName = document.querySelector('#popup-profile-name');
 const profileProfession = document.querySelector('#profile__profession');
-const inputProfession = document.querySelector('#popup__profile_profession');
+const inputProfession = document.querySelector('#popup-profile-profession');
 const formPopupElement = document.querySelector('#popup-profile__content');
 const elementsContainer = document.querySelector('.elements');
 const cardTemplate = document.querySelector('#element-template').content;
@@ -13,12 +13,12 @@ const popupImage = document.querySelector('.popup-picture__image');
 const popupCard = document.querySelector('#popup-card');
 const cardAddButton = document.querySelector('#profile__add-button');
 const cardForm = document.querySelector('#popup-card__content');
-const cardInputName = document.querySelector('#popup__card_place');
-const cardInputLink = document.querySelector('#popup__card_url');
+const cardInputName = document.querySelector('#popup-card-place');
+const cardInputLink = document.querySelector('#popup-card-url');
 const popups = Array.from(document.querySelectorAll('.popup'));
 const formElement = validationConfig.formSelector;
 const formInput = validationConfig.inputSelector;
-const formError = document.querySelector(`.${formInput.id}_error`);
+const formError = document.querySelector(`.${formInput.id}-error`);
 const buttonElement = validationConfig.submitButtonSelector;
 
 //закрытие попапа кликом на темном фоне
