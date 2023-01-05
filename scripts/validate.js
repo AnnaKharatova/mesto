@@ -8,7 +8,7 @@ const validationConfig = {
 };
 // Функция, которая добавляет класс с ошибкой
 const showInputError = (formElement, inputElement, errorMessage) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}_error`);
   inputElement.classList.add('popup__input-error_visible');
   errorElement.classList.add('popup__input_type_error');
   errorElement.textContent = errorMessage;
@@ -16,7 +16,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 
 // Функция, которая удаляет класс с ошибкой
 const hideInputError = (formElement, inputElement, ) => {
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}_error`);
   inputElement.classList.remove('popup__input-error_visible');
   errorElement.classList.remove('popup__input_type_error');
   errorElement.textContent = '';
