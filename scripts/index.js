@@ -27,7 +27,6 @@ const cardsList = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-
 const validationConfig = {
   formSelector: '.popup__content',
   inputSelector: '.popup__input',
@@ -36,7 +35,6 @@ const validationConfig = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__input-error_visible',
 };
-
 const popupProfile = document.querySelector('#popup-profile');
 const profileButton = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('#profile__name');
@@ -51,6 +49,7 @@ const cardInputName = document.querySelector('#popup-card-place');
 const cardInputLink = document.querySelector('#popup-card-url');
 const popups = Array.from(document.querySelectorAll('.popup'));
 const popupPicture = document.querySelector('#popup-picture')
+
 
 //закрытие попапа кликом на темном фоне
 popups.forEach((item) => {

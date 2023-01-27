@@ -19,16 +19,12 @@ export class Card {
   }
 
   generateCard() {
-    // Запишем разметку в приватное поле _element.
-    // Так у других элементов появится доступ к ней.
     this._element = this._getTemplate();
     this._setEventListeners()
-    // Добавим данные
     this._cardImage = this._element.querySelector('.element__image')
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._element.querySelector('.element__title').textContent = this._name;
-    // Вернём элемент наружу
     return this._element;
   }
 
