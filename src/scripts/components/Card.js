@@ -30,7 +30,7 @@ export class Card {
     this._deleteButton = this._element.querySelector('.element__delete-button');
     this._elementImage = this._element.querySelector('.element__image');
     this._likeButton.addEventListener('click', () => {
-      this._isLike()
+      this._toggleLike()
     });
     this._deleteButton.addEventListener('click', () => {
       this._deleteCard()
@@ -40,7 +40,7 @@ export class Card {
     })
   }
 
-  _isLike() {
+  _toggleLike() {
     this._likeButton.classList.toggle('element__button_active');
   }
 
