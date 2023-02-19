@@ -27,11 +27,15 @@ const api = new Api({
   }
 });
 
-Promise.all([api.getUserInfo(), api.getInitialCards()]).then(([userData, cardData]) => {
-  userInfo.setUserInfo(userData)
-  userInfo.editAvatar(userData)
-  itemsList.renderItems(cardData.reverse())
-})
+Promise.all([api.getUserInfo(), api.getInitialCards()])
+  .then(([userData, cardData]) => {
+    userInfo.setUserInfo(userData)
+    userInfo.editAvatar(userData)
+    itemsList.renderItems(cardData.reverse())
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 
 // Форма редактирования профиля
 const userInfo = new UserInfo('#profile__name', '#profile__profession', '.profile__avatar');
@@ -45,7 +49,6 @@ const popupUserProfile = new PopupWithForm('#popup-profile',
       })
       .catch((err) => {
         console.log(err)
-        popupUserProfile.renderError(err)
       })
   });
 popupUserProfile.setEventListeners();
@@ -66,12 +69,15 @@ function handleCardClick(link, name) {
   openPicture.open(link, name);
 }
 
+const popupDelete = new PopupWithConfirmation('#popup-confirmation')
+popupDelete.setEventListeners()
+
 function createCard(cardData) {
   const card = new Card(
     cardData,
     handleCardClick,
     () => {
-      const popupDelete = new PopupWithConfirmation('#popup-confirmation', () => {
+      popupDelete.setConfirmation(() => {
         api.deleteCard(cardData._id)
           .then(() => {
             popupDelete.renderLoading(false),
@@ -81,9 +87,8 @@ function createCard(cardData) {
           .catch((err) => {
             console.log(err)
           })
-      })
-      popupDelete.open()
-      popupDelete.setEventListeners()
+      }),
+        popupDelete.open()
     },
     '.element-template',
     userInfo.getUserId(),
@@ -95,7 +100,7 @@ function createCard(cardData) {
           })
           .catch((err) => {
             console.log(err)
-          });
+          })
       } else {
         api.deleteLike(cardData._id)
           .then((dataReturned) => {

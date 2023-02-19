@@ -17,9 +17,6 @@ export class Api {
       headers: this._headers,
     })
       .then(this._checkResponse)
-      .catch(res => {
-        console.log(res);
-      });
   }
 
   getUserInfo() {
@@ -27,9 +24,6 @@ export class Api {
       headers: this._headers
     })
       .then(this._checkResponse)
-      .catch(res => {
-        console.log(res);
-      });
   }
 
   editUserInfo(data) {
@@ -70,9 +64,6 @@ export class Api {
       })
     })
       .then(this._checkResponse)
-      .catch(res => {
-        console.log(res);
-      })
   }
 
   addLike(cardId) {
@@ -81,7 +72,6 @@ export class Api {
       headers: this._headers,
     })
       .then(this._checkResponse)
-
   }
 
   deleteLike(cardId) {
