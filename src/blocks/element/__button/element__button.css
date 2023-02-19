@@ -7,8 +7,7 @@
   color:#FFFFFF;
   width: 22px;
   height: 19px;
-  margin: 25px 15px 31px auto;
-  align-self: center;
+  margin: 25px 0 0;
   cursor: pointer;
   transition: opacity .3s linear;
 }

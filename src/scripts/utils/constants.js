@@ -38,3 +38,5 @@ export const inputProfileName = document.querySelector('#popup-profile-name');
 export const inputProfession = document.querySelector('#popup-profile-profession');
 export const popupCardForm = document.querySelector('#popup-card__content');
 export const cardAddButton = document.querySelector('#profile__add-button');
+export const avatarButton = document.querySelector('.profile__avatar-button')
+export const popupAvatarForm = document.querySelector('#popup-avatar__content')
