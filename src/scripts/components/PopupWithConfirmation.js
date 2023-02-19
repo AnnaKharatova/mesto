@@ -15,18 +15,6 @@ export class PopupWithConfirmation extends Popup {
       this._buttonSubmit.textContent = 'Да';
     }
   }
-  close() {
-    super.close()
-    this._form.removeEventListener('submit', (evt) => {
-      evt.preventDefault();
-      this._submit()
-    })
-  }
-
-  _submit() {
-    this._confirmation();
-    this.renderLoading(true)
-  }
 
   setConfirmation(callback) {
     this._confirmation = callback;
@@ -36,7 +24,8 @@ export class PopupWithConfirmation extends Popup {
     super.setEventListeners();
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._submit()
+      this._confirmation();
+      this.renderLoading(true)
     })
   }
 
