@@ -44,11 +44,13 @@ const popupUserProfile = new PopupWithForm('#popup-profile',
     api.editUserInfo({ name: dataInput.name, about: dataInput.profession })
       .then((data) => {
         userInfo.editUserInfo({ name: data.name, profession: data.about }),
-          popupUserProfile.renderLoading(false),
           popupUserProfile.close()
       })
       .catch((err) => {
         console.log(err)
+      })
+      .finally(() => {
+        popupUserProfile.renderLoading(false)
       })
   });
 popupUserProfile.setEventListeners();
@@ -80,12 +82,14 @@ function createCard(cardData) {
       popupDelete.setConfirmation(() => {
         api.deleteCard(cardData._id)
           .then(() => {
-            popupDelete.renderLoading(false),
-              popupDelete.close(),
+            popupDelete.close(),
               card.removeCard()
           })
           .catch((err) => {
             console.log(err)
+          })
+          .finally(() => {
+            popupDelete.renderLoading(false)
           })
       }),
         popupDelete.open()
@@ -127,11 +131,13 @@ const openCardForm = new PopupWithForm('#popup-card', (cardData) => {
   api.addCard({ name: cardData.name, link: cardData.link })
     .then((data) => {
       itemsList.addItem(createCard(data)),
-        openCardForm.renderLoading(false),
         openCardForm.close()
     })
     .catch((err) => {
       console.log(err)
+    })
+    .finally(() => {
+      openCardForm.renderLoading(false)
     })
 })
 openCardForm.setEventListeners();
@@ -154,11 +160,13 @@ const popupAvatar = new PopupWithForm('#popup-avatar', (linkData) => {
   api.editAvatar({ link: linkData.link })
     .then((data) => {
       userInfo.editAvatar(data)
-      popupAvatar.renderLoading(false),
-        popupAvatar.close()
+      popupAvatar.close()
     })
     .catch((err) => {
       console.log(err)
+    })
+    .finally(() => {
+      popupAvatar.renderLoading(false)
     })
 });
 

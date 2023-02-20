@@ -1,20 +1,14 @@
 .profile__info {
-  display: grid;
+  display: flex;
   max-width: 600px;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
   column-gap: 18px;
 }
 
 
 @media screen and (max-width: 850px) {
   .profile__info {
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-   "avatar avatar"
-   "name edit-button"
-   "profession profession";
-   column-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
   }
 }

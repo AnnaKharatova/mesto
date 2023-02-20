@@ -19,10 +19,12 @@
             <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Фото пользователя">
             <button class="profile__avatar-button " type="button" id="profile__avatar-button"></button>
           </div>
-          <h1 class="profile__name" id="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
-          <p class="profile__profession" id="profile__profession">Исследователь океанов</p>
+          <div class="profile__about">
+            <h1 class="profile__name" id="profile__name">Жак-Ив Кусто</h1>
+            <p class="profile__profession" id="profile__profession">Исследователь океанов</p>
+          </div>
         </div>
+        <button class="profile__edit-button" type="button"></button>
         <button class="profile__add-button" type="button" id="profile__add-button"></button>
       </section>
 
@@ -89,8 +91,8 @@
         <button class="popup__close-button" type="button" id="popup-avatar__close-button"></button>
         <h2 class="popup__title">Обновить аватар</h2>
         <form class="popup__content" id="popup-avatar__content" name="popup-avatar__content" novalidate>
-          <input class="popup__input" id="popup-avatar-url" type="url" placeholder="https://somewebsite.com/someimage.jpg" name="link"
-            required>
+          <input class="popup__input" id="popup-avatar-url" type="url"
+            placeholder="https://somewebsite.com/someimage.jpg" name="link" required>
           <span class="popup__input-error popup-avatar-url-error"></span>
           <button type="submit" class="popup__save-button" id="popup-avatar__form-button"
             name="popup-avatar__form-button">Создать</button>
@@ -105,8 +107,8 @@
         <button class="popup__close-button" type="button" id="popup-confirmation__close-button"></button>
         <h2 class="popup__title">Вы уверены?</h2>
         <form class="popup__content" id="popup-confirmation__content" name="popup-confirmation__content" novalidate>
-          <button type="submit" class="popup__save-button popup__confirmation-button" id="popup-confirmation__form-button"
-          name="popup-confirmation__form-button">Да</button>
+          <button type="submit" class="popup__save-button popup__confirmation-button"
+            id="popup-confirmation__form-button" name="popup-confirmation__form-button">Да</button>
         </form>
       </div>
     </div>

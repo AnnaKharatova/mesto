@@ -8,11 +8,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 850px) {
   .profile__name {
-    grid-area: name;
     font-size: 27px;
     line-height: 33px;
     text-align: center;

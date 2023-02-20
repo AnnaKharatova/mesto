@@ -11,7 +11,7 @@
   cursor: pointer;
   transition: opacity .3s linear;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .profile__edit-button:hover {
@@ -24,6 +24,5 @@
     margin-top: 5px;
     width: 18px;
     height: 18px;
-    grid-area: edit-button;
   }
 }

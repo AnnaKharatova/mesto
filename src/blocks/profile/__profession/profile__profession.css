@@ -9,12 +9,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
 }
 
 @media screen and (max-width: 850px) {
   .profile__profession {
-    grid-area: profession;
+
     text-align: center;
     padding-top: 12px;
     font-size: 14px;
